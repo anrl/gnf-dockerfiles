@@ -24,3 +24,16 @@ An example invocation is as follows:
 ```
 docker run -itd --cap-add=NET_ADMIN --env="LOAD_FACTOR=8.0" --env="DELAY=2ms" glanf/loadsim
 ```
+
+Installation
+============
+
+This setup requires *sudo* permissions and also makes network level changes. Thus it is best to experiment with it in a Linux VM or use the **testing** docker image within which *docker* is installed.
+
+### Pre-req
+1. If running *glanf*  in host or VM then you need the **pipework** tool
+    - You can get it [here](https://github.com/jpetazzo/pipework)
+    - It is a shell script named *pipework*
+    -Just copy it to /
+
+must install **pipework** if running in your host or VM

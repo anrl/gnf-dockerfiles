@@ -1,12 +1,16 @@
 # Implements wire functionality
 
-FROM debian:wheezy
+FROM debian:stretch
 MAINTAINER Richard Cziva, Simon Jouet, Kyle White
 
 RUN apt-get update && apt-get install -y \
 	bridge-utils \
 	net-tools \
-	iptables 
+	iptables \
+	netcat \
+	procps \
+	tcpdump \
+	curl
 
 ADD ifinit /usr/local/bin/
 ADD brinit /usr/local/bin/
