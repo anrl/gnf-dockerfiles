@@ -18,6 +18,6 @@ RUN mkdir data
 ADD main.py ./data/
 RUN chmod +x ./data/main.py
 
-ENTRYPOINT ifinit && \
-	iptables -A FORWARD -j NFQUEUE -p tcp --destination-port 80 --queue-num 1 && \
-	python ./data/main.py
+ENTRYPOINT iptables -A FORWARD -j NFQUEUE -p tcp --destination-port 80 --queue-num 1 && \
+	python ./data/main.py > http_filter.logs && \
+    ifinit
