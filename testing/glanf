@@ -29,10 +29,23 @@ clean_ovs()
     ovs-ofctl del-flows ${BRIDGE_NAME}
 }
 
+print_usage_and_exit()
+{
+    echo "Usage: $0"
+    echo -e "\tstart <host_image> <middlebox_image1> ..."
+    echo -e "\tstop"
+    echo -e "\tclean"
+    exit 1
+}
+
 # Check the privileges
 if [ "$(id -u)" != "0" ]; then
     echo "Sorry, you are not root."
     exit 1
+fi
+
+if [ "$#" -lt 3 ]; then
+    print_usage_and_exit
 fi
 
 # Parse the parameters
@@ -124,9 +137,5 @@ case "$COMMAND" in
             clean_ovs
             ;;
         *)
-            echo "Usage: $0"
-            echo -e "\tstart <host_image> <middlebox_image1> ..."
-            echo -e "\tstop"
-            echo -e "\tclean"
-            exit 1
+            print_usage_and_exit
 esac
