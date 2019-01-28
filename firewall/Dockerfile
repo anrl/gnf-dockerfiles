@@ -4,8 +4,8 @@
 FROM glanf/base
 MAINTAINER Richard Cziva
 
-ENTRYPOINT ifinit && \
-        brinit && \
-        iptables -A FORWARD -p tcp --dport 80 -j ACCEPT && \
+ENTRYPOINT iptables -A FORWARD -p tcp --dport 80 -j ACCEPT && \
+        iptables -A FORWARD -p tcp -s 10.0.0.2 -j ACCEPT && \
         iptables -A FORWARD -j DROP && \
+        ifinit && \
         /bin/bash

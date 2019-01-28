@@ -48,30 +48,45 @@ case "$COMMAND" in
             ### Start and configure the source host
             # Start the source docker container
             SOURCEID=$(docker run -itd --cap-add=NET_ADMIN --name="source" $HOSTIMAGE)
-            echo started source $SOURCEID
+            echo "started source $SOURCEID"
             # Inject the interface connected to OVS
             pipework ${BRIDGE_NAME} $SOURCEID 10.0.0.1/8
-            SOURCEPORT=$(getInterfacePort $(getHostInterfaceName $SOURCEID eth1))
+            HINTFACENAME=$(getHostInterfaceName $SOURCEID eth1)
+            SOURCEPORT=$(getInterfacePort $HINTFACENAME)
             PREVIOUSPORT=$SOURCEPORT
+            echo "Source Interface [Port] is: $HINTFACENAME [$SOURCEPORT]"
+            echo "=============================================================================================="
 
             ### Start the middleboxes
             for i in ${MIDDLEBOXIMAGES}
             do
                 MIDDLEBOXID=$(docker run -itd --cap-add=NET_ADMIN $i)
-                echo started middlebox $MIDDLEBOXID
+                echo "started middlebox $MIDDLEBOXID"
 
                 # Attach the two interfaces
                 pipework ${BRIDGE_NAME} -i if1 $MIDDLEBOXID 0/0
                 pipework ${BRIDGE_NAME} -i if2 $MIDDLEBOXID 0/0
 
                 #
-                IF1PORT=$(getInterfacePort $(getHostInterfaceName $MIDDLEBOXID if1))
-                IF2PORT=$(getInterfacePort $(getHostInterfaceName $MIDDLEBOXID if2))
+                HOSTINTNAME_1=$(getHostInterfaceName $MIDDLEBOXID if1)
+                HOSTINTNAME_2=$(getHostInterfaceName $MIDDLEBOXID if2)
+                
+                docker exec $MIDDLEBOXID /usr/local/bin/brinit
+
+                IF1PORT=$(getInterfacePort $HOSTINTNAME_1)
+                IF2PORT=$(getInterfacePort $HOSTINTNAME_2)
+
+                echo "Middlebox has interfaces::"
+                echo "if1 [port] --> $HOSTINTNAME_1 [$IF1PORT]"
+                echo "if2 [port] --> $HOSTINTNAME_2 [$IF2PORT]"
+                echo "-----------------------------------------------"
 
                 # Insert the forwarding rules
                 ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${PREVIOUSPORT},nw_src=10.0.0.1,dl_type=0x0800,actions=output:${IF1PORT}
                 ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${IF1PORT},nw_src=10.0.0.2,dl_type=0x0800,actions=output:${PREVIOUSPORT}
-
+                echo "R1: ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${PREVIOUSPORT},nw_src=10.0.0.1,dl_type=0x0800,actions=output:${IF1PORT}"
+                echo "R2: ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${IF1PORT},nw_src=10.0.0.2,dl_type=0x0800,actions=output:${PREVIOUSPORT}"
+                echo "=============================================================================================="
                 #
                 PREVIOUSPORT=$IF2PORT
             done
@@ -79,9 +94,11 @@ case "$COMMAND" in
 
             ### Start and configure the destionation host
             DESTID=$(docker run -itd --cap-add=NET_ADMIN --name="destination" $HOSTIMAGE)
-            echo started destination $DESTID
+            echo "started destination $DESTID"
             pipework ${BRIDGE_NAME} $DESTID 10.0.0.2/8
-            DESTPORT=$(getInterfacePort $(getHostInterfaceName $DESTID eth1))
+            DESTINTANAME=$(getHostInterfaceName $DESTID eth1)
+            DESTPORT=$(getInterfacePort $DESTINTANAME)
+            echo "Destination Interface [Port] is: $DESTINTANAME [$DESTPORT]"
 
             ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${PREVIOUSPORT},nw_src=10.0.0.1,dl_type=0x0800,actions=output:${DESTPORT}
             ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${DESTPORT},nw_src=10.0.0.2,dl_type=0x0800,actions=output:${PREVIOUSPORT}
@@ -89,6 +106,15 @@ case "$COMMAND" in
             # Set default behaviour otherwise
             ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${SOURCEPORT},actions=output:${DESTPORT}
             ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${DESTPORT},actions=output:${SOURCEPORT}
+
+            echo "Destination rules::"
+            echo "R1: ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${PREVIOUSPORT},nw_src=10.0.0.1,dl_type=0x0800,actions=output:${DESTPORT}"
+            echo "R2: ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${DESTPORT},nw_src=10.0.0.2,dl_type=0x0800,actions=output:${PREVIOUSPORT}"
+            echo "R3: ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${SOURCEPORT},actions=output:${DESTPORT}"
+            echo "R4: ovs-ofctl add-flow ${BRIDGE_NAME} in_port=${DESTPORT},actions=output:${SOURCEPORT}"
+            echo "=============================================================================================="
+                
+
             ;;
         stop)
             docker ps -q | xargs docker stop
