@@ -44,8 +44,10 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-if [ "$#" -lt 3 ]; then
-    print_usage_and_exit
+if [ "$1" = "start" ]; then
+    if [ "$#" -lt 3 ]; then
+        print_usage_and_exit
+    fi
 fi
 
 # Parse the parameters
