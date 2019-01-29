@@ -87,6 +87,7 @@ case "$COMMAND" in
                 HOSTINTNAME_2=$(getHostInterfaceName $MIDDLEBOXID if2)
                 
                 docker exec $MIDDLEBOXID /usr/local/bin/brinit
+                docker exec $MIDDLEBOXID /startup_script.sh
 
                 IF1PORT=$(getInterfacePort $HOSTINTNAME_1)
                 IF2PORT=$(getInterfacePort $HOSTINTNAME_2)

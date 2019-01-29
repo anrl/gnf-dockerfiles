@@ -11,7 +11,8 @@ RUN apt-get install -y \
     build-essential \
     python-dev \
     libnetfilter-queue-dev \
-    python-pip
+    python-pip \
+    dnsutils
 
 RUN pip install netfilterqueue
 
@@ -21,7 +22,7 @@ RUN chmod +x ./data/loadbalancer.py
 
 # Set your domain and webservers here!
 ENV DOMAIN testwebpage
-ENV WEBSERVERS 10.0.0.2 10.0.0.3
+ENV WEBSERVERS 10.0.0.2 10.0.0.3 10.0.0.4 10.0.0.5 10.0.0.6 10.0.0.7 10.0.0.8 10.0.0.9 10.0.0.10
 
 ENTRYPOINT ifinit
         

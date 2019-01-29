@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
 	netcat \
 	procps \
 	tcpdump \
-	curl
+	curl \
+	vim
 
 ADD ifinit /usr/local/bin/
 ADD brinit /usr/local/bin/

@@ -9,10 +9,11 @@ expense = float(os.getenv("LOAD_FACTOR", "5.0"))
 limit = int(expense * (2 ** expense))
 
 def cb(payload):
+    print "Payload callback..."
     sum = 0
     for a in xrange(1, limit):
         sum += 1
-
+    print "New payload --> " + str(sum)
 
 if __name__ == "__main__":
     def inthandler(signum, frame):
