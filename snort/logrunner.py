@@ -4,7 +4,7 @@ import os
 import httplib
 
 def postNotification(notification):
-	conn = httplib.HTTPConnection("172.17.42.1:8081")
+	conn = httplib.HTTPConnection("127.0.0.1:8081")
 	conn.request("POST", "/notification", notification)
 	conn.close()
 

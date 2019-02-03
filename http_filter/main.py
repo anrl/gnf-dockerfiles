@@ -12,7 +12,7 @@ def callback(pkt):
         if 'hack' in parsed:
             pkt.drop()
             print "packet dropped"  
-            #requests.post(url, data="Http Filtered content")	      
+            # requests.post(url, data="Http Filtered content")	      
             # Uncomment and set a right URL to send a notification
         else:
             pkt.accept()

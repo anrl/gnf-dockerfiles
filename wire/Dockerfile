@@ -3,7 +3,8 @@
 FROM glanf/base
 MAINTAINER Kyle White
 
-ENTRYPOINT ifinit && \
-	brinit && \
-	/bin/bash
+COPY ./startup_script.sh /
+RUN chmod 777 /startup_script.sh
+
+ENTRYPOINT trap : TERM INT; sleep infinity & wait
 

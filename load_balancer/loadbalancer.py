@@ -20,7 +20,6 @@ webservers = webservers_string.split()
 def getwebserver():
     return random.choice(webservers)
 
-#nslookup - 10.0.0.2
 def callback(payload):
     print "Callback invoked..."
     data = payload.get_data()
