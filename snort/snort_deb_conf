@@ -1,0 +1,199 @@
+# Time zone:
+# Choices: Alaska, Aleutian, Arizona, Central, Eastern, Hawaii, Indiana-Starke, Michigan, Mountain, Pacific, Pacific-New, Samoa
+tzdata	tzdata/Zones/US	select	
+# Failure restarting some services for GNU libc upgrade
+libc6	glibc/restart-failed	error	
+libc6:amd64	glibc/restart-failed	error	
+# Do you want to remove the user ?
+base-passwd	base-passwd/user-remove	boolean	true
+# Incompatible PAM profiles selected.
+libpam-runtime	libpam-runtime/conflicts	error	
+# Time zone:
+# Choices: Amsterdam, Andorra, Astrakhan, Athens, Belfast, Belgrade, Berlin, Bratislava, Brussels, Bucharest, Budapest, Busingen, Chisinau, Copenhagen, Dublin, Gibraltar, Guernsey, Helsinki, Isle_of_Man, Istanbul, Jersey, Kaliningrad, Kiev, Kirov, Lisbon, Ljubljana, London, Luxembourg, Madrid, Malta, Mariehamn, Minsk, Monaco, Moscow, Nicosia, Oslo, Paris, Podgorica, Prague, Riga, Rome, Samara, San_Marino, Sarajevo, Saratov, Simferopol, Skopje, Sofia, Stockholm, Tallinn, Tirane, Tiraspol, Ulyanovsk, Uzhgorod, Vaduz, Vatican, Vienna, Vilnius, Volgograd, Warsaw, Zagreb, Zaporozhye, Zurich
+tzdata	tzdata/Zones/Europe	select	
+# Certificates to activate:
+# Choices: mozilla/ACCVRAIZ1.crt, mozilla/AC_RAIZ_FNMT-RCM.crt, mozilla/AC_Raíz_Certicámara_S.A..crt, mozilla/Actalis_Authentication_Root_CA.crt, mozilla/AddTrust_External_Root.crt, mozilla/AddTrust_Low-Value_Services_Root.crt, mozilla/AffirmTrust_Commercial.crt, mozilla/AffirmTrust_Networking.crt, mozilla/AffirmTrust_Premium.crt, mozilla/AffirmTrust_Premium_ECC.crt, mozilla/Amazon_Root_CA_1.crt, mozilla/Amazon_Root_CA_2.crt, mozilla/Amazon_Root_CA_3.crt, mozilla/Amazon_Root_CA_4.crt, mozilla/Atos_TrustedRoot_2011.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt, mozilla/Baltimore_CyberTrust_Root.crt, mozilla/Buypass_Class_2_Root_CA.crt, mozilla/Buypass_Class_3_Root_CA.crt, mozilla/CA_Disig_Root_R2.crt, mozilla/CFCA_EV_ROOT.crt, mozilla/COMODO_Certification_Authority.crt, mozilla/COMODO_ECC_Certification_Authority.crt, mozilla/COMODO_RSA_Certification_Authority.crt, mozilla/Camerfirma_Chambers_of_Commerce_Root.crt, mozilla/Camerfirma_Global_Chambersign_Root.crt, mozilla/Certigna.crt, mozilla/Certinomis_-_Root_CA.crt, mozilla/Certplus_Class_2_Primary_CA.crt, mozilla/Certplus_Root_CA_G1.crt, mozilla/Certplus_Root_CA_G2.crt, mozilla/Certum_Root_CA.crt, mozilla/Certum_Trusted_Network_CA.crt, mozilla/Certum_Trusted_Network_CA_2.crt, mozilla/Chambers_of_Commerce_Root_-_2008.crt, mozilla/ComSign_CA.crt, mozilla/Comodo_AAA_Services_root.crt, mozilla/Cybertrust_Global_Root.crt, mozilla/D-TRUST_Root_CA_3_2013.crt, mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt, mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt, mozilla/DST_Root_CA_X3.crt, mozilla/Deutsche_Telekom_Root_CA_2.crt, mozilla/DigiCert_Assured_ID_Root_CA.crt, mozilla/DigiCert_Assured_ID_Root_G2.crt, mozilla/DigiCert_Assured_ID_Root_G3.crt, mozilla/DigiCert_Global_Root_CA.crt, mozilla/DigiCert_Global_Root_G2.crt, mozilla/DigiCert_Global_Root_G3.crt, mozilla/DigiCert_High_Assurance_EV_Root_CA.crt, mozilla/DigiCert_Trusted_Root_G4.crt, mozilla/E-Tugra_Certification_Authority.crt, mozilla/EC-ACC.crt, mozilla/EE_Certification_Centre_Root_CA.crt, mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt, mozilla/Entrust_Root_Certification_Authority.crt, mozilla/Entrust_Root_Certification_Authority_-_EC1.crt, mozilla/Entrust_Root_Certification_Authority_-_G2.crt, mozilla/GDCA_TrustAUTH_R5_ROOT.crt, mozilla/GeoTrust_Global_CA.crt, mozilla/GeoTrust_Primary_Certification_Authority.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G2.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G3.crt, mozilla/GeoTrust_Universal_CA.crt, mozilla/GeoTrust_Universal_CA_2.crt, mozilla/GlobalSign_ECC_Root_CA_-_R4.crt, mozilla/GlobalSign_ECC_Root_CA_-_R5.crt, mozilla/GlobalSign_Root_CA.crt, mozilla/GlobalSign_Root_CA_-_R2.crt, mozilla/GlobalSign_Root_CA_-_R3.crt, mozilla/Global_Chambersign_Root_-_2008.crt, mozilla/Go_Daddy_Class_2_CA.crt, mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt, mozilla/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2011.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt, mozilla/Hongkong_Post_Root_CA_1.crt, mozilla/ISRG_Root_X1.crt, mozilla/IdenTrust_Commercial_Root_CA_1.crt, mozilla/IdenTrust_Public_Sector_Root_CA_1.crt, mozilla/Izenpe.com.crt, mozilla/LuxTrust_Global_Root_2.crt, mozilla/Microsec_e-Szigno_Root_CA_2009.crt, mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt, mozilla/Network_Solutions_Certificate_Authority.crt, mozilla/OISTE_WISeKey_Global_Root_GA_CA.crt, mozilla/OISTE_WISeKey_Global_Root_GB_CA.crt, mozilla/OpenTrust_Root_CA_G1.crt, mozilla/OpenTrust_Root_CA_G2.crt, mozilla/OpenTrust_Root_CA_G3.crt, mozilla/QuoVadis_Root_CA.crt, mozilla/QuoVadis_Root_CA_1_G3.crt, mozilla/QuoVadis_Root_CA_2.crt, mozilla/QuoVadis_Root_CA_2_G3.crt, mozilla/QuoVadis_Root_CA_3.crt, mozilla/QuoVadis_Root_CA_3_G3.crt, mozilla/S-TRUST_Universal_Root_CA.crt, mozilla/SSL.com_EV_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt, mozilla/SSL.com_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_Root_Certification_Authority_RSA.crt, mozilla/SZAFIR_ROOT_CA2.crt, mozilla/SecureSign_RootCA11.crt, mozilla/SecureTrust_CA.crt, mozilla/Secure_Global_CA.crt, mozilla/Security_Communication_RootCA2.crt, mozilla/Security_Communication_Root_CA.crt, mozilla/Sonera_Class_2_Root_CA.crt, mozilla/Staat_der_Nederlanden_EV_Root_CA.crt, mozilla/Staat_der_Nederlanden_Root_CA_-_G2.crt, mozilla/Staat_der_Nederlanden_Root_CA_-_G3.crt, mozilla/Starfield_Class_2_CA.crt, mozilla/Starfield_Root_Certificate_Authority_-_G2.crt, mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt, mozilla/SwissSign_Gold_CA_-_G2.crt, mozilla/SwissSign_Platinum_CA_-_G2.crt, mozilla/SwissSign_Silver_CA_-_G2.crt, mozilla/Swisscom_Root_CA_2.crt, mozilla/Symantec_Class_1_Public_Primary_Certification_Authority_-_G4.crt, mozilla/Symantec_Class_1_Public_Primary_Certification_Authority_-_G6.crt, mozilla/Symantec_Class_2_Public_Primary_Certification_Authority_-_G4.crt, mozilla/Symantec_Class_2_Public_Primary_Certification_Authority_-_G6.crt, mozilla/T-TeleSec_GlobalRoot_Class_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_3.crt, mozilla/TC_TrustCenter_Class_3_CA_II.crt, mozilla/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt, mozilla/TWCA_Global_Root_CA.crt, mozilla/TWCA_Root_Certification_Authority.crt, mozilla/Taiwan_GRCA.crt, mozilla/TeliaSonera_Root_CA_v1.crt, mozilla/TrustCor_ECA-1.crt, mozilla/TrustCor_RootCert_CA-1.crt, mozilla/TrustCor_RootCert_CA-2.crt, mozilla/Trustis_FPS_Root_CA.crt, mozilla/TÜRKTRUST_Elektronik_Sertifika_Hizmet_Sağlayıcısı_H5.crt, mozilla/USERTrust_ECC_Certification_Authority.crt, mozilla/USERTrust_RSA_Certification_Authority.crt, mozilla/UTN_USERFirst_Email_Root_CA.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.crt, mozilla/VeriSign_Universal_Root_Certification_Authority.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Visa_eCommerce_Root.crt, mozilla/XRamp_Global_CA_Root.crt, mozilla/certSIGN_ROOT_CA.crt, mozilla/ePKI_Root_Certification_Authority.crt, mozilla/thawte_Primary_Root_CA.crt, mozilla/thawte_Primary_Root_CA_-_G2.crt, mozilla/thawte_Primary_Root_CA_-_G3.crt
+ca-certificates	ca-certificates/enable_crts	multiselect	mozilla/ACCVRAIZ1.crt, mozilla/AC_RAIZ_FNMT-RCM.crt, mozilla/AC_Raíz_Certicámara_S.A..crt, mozilla/Actalis_Authentication_Root_CA.crt, mozilla/AddTrust_External_Root.crt, mozilla/AddTrust_Low-Value_Services_Root.crt, mozilla/AffirmTrust_Commercial.crt, mozilla/AffirmTrust_Networking.crt, mozilla/AffirmTrust_Premium.crt, mozilla/AffirmTrust_Premium_ECC.crt, mozilla/Amazon_Root_CA_1.crt, mozilla/Amazon_Root_CA_2.crt, mozilla/Amazon_Root_CA_3.crt, mozilla/Amazon_Root_CA_4.crt, mozilla/Atos_TrustedRoot_2011.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt, mozilla/Baltimore_CyberTrust_Root.crt, mozilla/Buypass_Class_2_Root_CA.crt, mozilla/Buypass_Class_3_Root_CA.crt, mozilla/CA_Disig_Root_R2.crt, mozilla/CFCA_EV_ROOT.crt, mozilla/COMODO_Certification_Authority.crt, mozilla/COMODO_ECC_Certification_Authority.crt, mozilla/COMODO_RSA_Certification_Authority.crt, mozilla/Camerfirma_Chambers_of_Commerce_Root.crt, mozilla/Camerfirma_Global_Chambersign_Root.crt, mozilla/Certigna.crt, mozilla/Certinomis_-_Root_CA.crt, mozilla/Certplus_Class_2_Primary_CA.crt, mozilla/Certplus_Root_CA_G1.crt, mozilla/Certplus_Root_CA_G2.crt, mozilla/Certum_Root_CA.crt, mozilla/Certum_Trusted_Network_CA.crt, mozilla/Certum_Trusted_Network_CA_2.crt, mozilla/Chambers_of_Commerce_Root_-_2008.crt, mozilla/ComSign_CA.crt, mozilla/Comodo_AAA_Services_root.crt, mozilla/Cybertrust_Global_Root.crt, mozilla/D-TRUST_Root_CA_3_2013.crt, mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt, mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt, mozilla/DST_Root_CA_X3.crt, mozilla/Deutsche_Telekom_Root_CA_2.crt, mozilla/DigiCert_Assured_ID_Root_CA.crt, mozilla/DigiCert_Assured_ID_Root_G2.crt, mozilla/DigiCert_Assured_ID_Root_G3.crt, mozilla/DigiCert_Global_Root_CA.crt, mozilla/DigiCert_Global_Root_G2.crt, mozilla/DigiCert_Global_Root_G3.crt, mozilla/DigiCert_High_Assurance_EV_Root_CA.crt, mozilla/DigiCert_Trusted_Root_G4.crt, mozilla/E-Tugra_Certification_Authority.crt, mozilla/EC-ACC.crt, mozilla/EE_Certification_Centre_Root_CA.crt, mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt, mozilla/Entrust_Root_Certification_Authority.crt, mozilla/Entrust_Root_Certification_Authority_-_EC1.crt, mozilla/Entrust_Root_Certification_Authority_-_G2.crt, mozilla/GDCA_TrustAUTH_R5_ROOT.crt, mozilla/GeoTrust_Global_CA.crt, mozilla/GeoTrust_Primary_Certification_Authority.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G2.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G3.crt, mozilla/GeoTrust_Universal_CA.crt, mozilla/GeoTrust_Universal_CA_2.crt, mozilla/GlobalSign_ECC_Root_CA_-_R4.crt, mozilla/GlobalSign_ECC_Root_CA_-_R5.crt, mozilla/GlobalSign_Root_CA.crt, mozilla/GlobalSign_Root_CA_-_R2.crt, mozilla/GlobalSign_Root_CA_-_R3.crt, mozilla/Global_Chambersign_Root_-_2008.crt, mozilla/Go_Daddy_Class_2_CA.crt, mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt, mozilla/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2011.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt, mozilla/Hongkong_Post_Root_CA_1.crt, mozilla/ISRG_Root_X1.crt, mozilla/IdenTrust_Commercial_Root_CA_1.crt, mozilla/IdenTrust_Public_Sector_Root_CA_1.crt, mozilla/Izenpe.com.crt, mozilla/LuxTrust_Global_Root_2.crt, mozilla/Microsec_e-Szigno_Root_CA_2009.crt, mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt, mozilla/Network_Solutions_Certificate_Authority.crt, mozilla/OISTE_WISeKey_Global_Root_GA_CA.crt, mozilla/OISTE_WISeKey_Global_Root_GB_CA.crt, mozilla/OpenTrust_Root_CA_G1.crt, mozilla/OpenTrust_Root_CA_G2.crt, mozilla/OpenTrust_Root_CA_G3.crt, mozilla/QuoVadis_Root_CA.crt, mozilla/QuoVadis_Root_CA_1_G3.crt, mozilla/QuoVadis_Root_CA_2.crt, mozilla/QuoVadis_Root_CA_2_G3.crt, mozilla/QuoVadis_Root_CA_3.crt, mozilla/QuoVadis_Root_CA_3_G3.crt, mozilla/S-TRUST_Universal_Root_CA.crt, mozilla/SSL.com_EV_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt, mozilla/SSL.com_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_Root_Certification_Authority_RSA.crt, mozilla/SZAFIR_ROOT_CA2.crt, mozilla/SecureSign_RootCA11.crt, mozilla/SecureTrust_CA.crt, mozilla/Secure_Global_CA.crt, mozilla/Security_Communication_RootCA2.crt, mozilla/Security_Communication_Root_CA.crt, mozilla/Sonera_Class_2_Root_CA.crt, mozilla/Staat_der_Nederlanden_EV_Root_CA.crt, mozilla/Staat_der_Nederlanden_Root_CA_-_G2.crt, mozilla/Staat_der_Nederlanden_Root_CA_-_G3.crt, mozilla/Starfield_Class_2_CA.crt, mozilla/Starfield_Root_Certificate_Authority_-_G2.crt, mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt, mozilla/SwissSign_Gold_CA_-_G2.crt, mozilla/SwissSign_Platinum_CA_-_G2.crt, mozilla/SwissSign_Silver_CA_-_G2.crt, mozilla/Swisscom_Root_CA_2.crt, mozilla/Symantec_Class_1_Public_Primary_Certification_Authority_-_G4.crt, mozilla/Symantec_Class_1_Public_Primary_Certification_Authority_-_G6.crt, mozilla/Symantec_Class_2_Public_Primary_Certification_Authority_-_G4.crt, mozilla/Symantec_Class_2_Public_Primary_Certification_Authority_-_G6.crt, mozilla/T-TeleSec_GlobalRoot_Class_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_3.crt, mozilla/TC_TrustCenter_Class_3_CA_II.crt, mozilla/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt, mozilla/TWCA_Global_Root_CA.crt, mozilla/TWCA_Root_Certification_Authority.crt, mozilla/Taiwan_GRCA.crt, mozilla/TeliaSonera_Root_CA_v1.crt, mozilla/TrustCor_ECA-1.crt, mozilla/TrustCor_RootCert_CA-1.crt, mozilla/TrustCor_RootCert_CA-2.crt, mozilla/Trustis_FPS_Root_CA.crt, mozilla/TÜRKTRUST_Elektronik_Sertifika_Hizmet_Sağlayıcısı_H5.crt, mozilla/USERTrust_ECC_Certification_Authority.crt, mozilla/USERTrust_RSA_Certification_Authority.crt, mozilla/UTN_USERFirst_Email_Root_CA.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.crt, mozilla/VeriSign_Universal_Root_Certification_Authority.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Visa_eCommerce_Root.crt, mozilla/XRamp_Global_CA_Root.crt, mozilla/certSIGN_ROOT_CA.crt, mozilla/ePKI_Root_Certification_Authority.crt, mozilla/thawte_Primary_Root_CA.crt, mozilla/thawte_Primary_Root_CA_-_G2.crt, mozilla/thawte_Primary_Root_CA_-_G3.crt
+# xscreensaver and xlockmore must be restarted before upgrading
+libpam-modules	libpam-modules/disable-screensaver	error	
+# Do you want to move the group ?
+base-passwd	base-passwd/group-move	boolean	true
+# Snort start method:
+# Choices: boot, dialup, manual
+snort	snort/startup	select	boot
+# Kernel must be upgraded
+libc6	glibc/kernel-too-old	error	
+libc6:amd64	glibc/kernel-too-old	error	
+# Do you want to add the group ?
+base-passwd	base-passwd/group-add	boolean	true
+# Configuration error
+snort-common	snort/config_error	error	
+# Restart services during package upgrades without asking?
+libc6	libraries/restart-without-asking	boolean	false
+libc6:amd64	libraries/restart-without-asking	boolean	false
+libpam0g:amd64	libraries/restart-without-asking	boolean	false
+# Do you want to change the GECOS of user ?
+base-passwd	base-passwd/user-change-gecos	boolean	true
+# Services to restart to make them use the new libraries:
+libssl1.1:amd64	libssl1.1/restart-services	string	
+# Interface(s) which Snort should listen on:
+snort	snort/interface	string	eth0
+# Root and postmaster mail recipient:
+exim4-config	exim4/dc_postmaster	string	
+# Minimum occurrences before alerts are reported:
+snort	snort/stats_treshold	string	1
+# General type of mail configuration:
+# Choices: internet site; mail is sent and received directly using SMTP, mail sent by smarthost; received via SMTP or fetchmail, mail sent by smarthost; no local mail, local delivery only; not on a network, no configuration at this time
+exim4-config	exim4/dc_eximconfig_configtype	select	local delivery only; not on a network
+# Use dash as the default system shell (/bin/sh)?
+dash	dash/sh	boolean	true
+# Time zone:
+# Choices: Abidjan, Accra, Addis_Ababa, Algiers, Asmara, Bamako, Bangui, Banjul, Bissau, Blantyre, Brazzaville, Bujumbura, Cairo, Casablanca, Ceuta, Conakry, Dakar, Dar_es_Salaam, Djibouti, Douala, El_Aaiun, Freetown, Gaborone, Harare, Johannesburg, Juba, Kampala, Khartoum, Kigali, Kinshasa, Lagos, Libreville, Lome, Luanda, Lubumbashi, Lusaka, Malabo, Maputo, Maseru, Mbabane, Mogadishu, Monrovia, Nairobi, Ndjamena, Niamey, Nouakchott, Ouagadougou, Porto-Novo, Sao_Tome, Timbuktu, Tripoli, Tunis, Windhoek
+tzdata	tzdata/Zones/Africa	select	
+# Do you want to add the user ?
+base-passwd	base-passwd/user-add	boolean	true
+# Delivery method for local mail:
+# Choices: mbox format in /var/mail/, Maildir format in home directory
+exim4-config	exim4/dc_localdelivery	select	mbox format in /var/mail/
+# Do you want to upgrade glibc now?
+libc6	glibc/upgrade	boolean	true
+libc6:amd64	glibc/upgrade	boolean	true
+# Override local changes to /etc/pam.d/common-*?
+libpam-runtime	libpam-runtime/override	boolean	false
+# PAM profiles to enable:
+# Choices: Unix authentication
+libpam-runtime	libpam-runtime/profiles	multiselect	unix
+# Reconfigure exim4-config instead of this package
+exim4-daemon-light	exim4-daemon-light/drec	error	
+# Services to restart for GNU libc library upgrade:
+libc6	glibc/restart-services	string	
+libc6:amd64	glibc/restart-services	string	
+# New certificates to activate:
+# Choices: 
+ca-certificates	ca-certificates/new_crts	multiselect	
+# Do you want to change the GID of group ?
+base-passwd	base-passwd/group-change-gid	boolean	true
+# Deprecated options in configuration file
+snort-common	snort/deprecated_config	note	
+# Do you want to move the user ?
+base-passwd	base-passwd/user-move	boolean	true
+# IP-addresses to listen on for incoming SMTP connections:
+exim4-config	exim4/dc_local_interfaces	string	127.0.0.1 ; ::1
+# Domains to relay mail for:
+exim4-config	exim4/dc_relay_domains	string	
+# Services to restart to make them use the new libraries:
+libssl1.0.2:amd64	libssl1.0.2/restart-services	string	
+# Time zone:
+# Choices: Apia, Auckland, Bougainville, Chatham, Chuuk, Easter, Efate, Enderbury, Fakaofo, Fiji, Funafuti, Galapagos, Gambier, Guadalcanal, Guam, Honolulu, Johnston, Kiritimati, Kosrae, Kwajalein, Majuro, Marquesas, Midway, Nauru, Niue, Norfolk, Noumea, Pago_Pago, Palau, Pitcairn, Pohnpei, Ponape, Port_Moresby, Rarotonga, Saipan, Samoa, Tahiti, Tarawa, Tongatapu, Truk, Wake, Wallis, Yap
+tzdata	tzdata/Zones/Pacific	select	
+# Snort restart required
+snort	snort/please_restart_manually	note	
+# Reconfigure exim4-config instead of this package
+exim4-base	exim4-base/drec	error	
+# Really leave the mail system unconfigured?
+exim4-config	exim4/no_config	boolean	true
+# Trust new certificates from certificate authorities?
+# Choices: yes, no, ask
+ca-certificates	ca-certificates/trust_new_crts	select	yes
+# Kernel version not supported
+libc6	glibc/kernel-not-supported	note	
+libc6:amd64	glibc/kernel-not-supported	note	
+# Split configuration into small files?
+exim4-config	exim4/use_split_config	boolean	false
+# Should Snort disable promiscuous mode on the interface?
+snort	snort/disable_promiscuous	boolean	false
+# Time zone:
+# Choices: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+tzdata	tzdata/Zones/Australia	select	
+# Do you want to change the home directory of user ?
+base-passwd	base-passwd/user-change-home	boolean	true
+# xscreensaver and xlockmore must be restarted before upgrading
+libc6	glibc/disable-screensaver	error	
+libc6:amd64	glibc/disable-screensaver	error	
+# Time zone:
+# Choices: Adak, Anchorage, Anguilla, Antigua, Araguaina, Argentina/Buenos_Aires, Argentina/Catamarca, Argentina/Cordoba, Argentina/Jujuy, Argentina/La_Rioja, Argentina/Mendoza, Argentina/Rio_Gallegos, Argentina/Salta, Argentina/San_Juan, Argentina/San_Luis, Argentina/Tucuman, Argentina/Ushuaia, Aruba, Asuncion, Atikokan, Atka, Bahia, Bahia_Banderas, Barbados, Belem, Belize, Blanc-Sablon, Boa_Vista, Bogota, Boise, Cambridge_Bay, Campo_Grande, Cancun, Caracas, Cayenne, Cayman, Chicago, Chihuahua, Coral_Harbour, Costa_Rica, Creston, Cuiaba, Curacao, Danmarkshavn, Dawson, Dawson_Creek, Denver, Detroit, Dominica, Edmonton, Eirunepe, El_Salvador, Ensenada, Fort_Nelson, Fortaleza, Glace_Bay, Godthab, Goose_Bay, Grand_Turk, Grenada, Guadeloupe, Guatemala, Guayaquil, Guyana, Halifax, Havana, Hermosillo, Indiana/Indianapolis, Indiana/Knox, Indiana/Marengo, Indiana/Petersburg, Indiana/Tell_City, Indiana/Vevay, Indiana/Vincennes, Indiana/Winamac, Inuvik, Iqaluit, Jamaica, Juneau, Kentucky/Louisville, Kentucky/Monticello, Kralendijk, La_Paz, Lima, Los_Angeles, Lower_Princes, Maceio, Managua, Manaus, Marigot, Martinique, Matamoros, Mazatlan, Menominee, Merida, Metlakatla, Mexico_City, Miquelon, Moncton, Monterrey, Montevideo, Montreal, Montserrat, Nassau, New_York, Nipigon, Nome, Noronha, North_Dakota/Beulah, North_Dakota/Center, North_Dakota/New_Salem, Ojinaga, Panama, Pangnirtung, Paramaribo, Phoenix, Port-au-Prince, Port_of_Spain, Porto_Acre, Porto_Velho, Puerto_Rico, Punta_Arenas, Rainy_River, Rankin_Inlet, Recife, Regina, Resolute, Rio_Branco, Santa_Isabel, Santarem, Santiago, Santo_Domingo, Sao_Paulo, Scoresbysund, Shiprock, Sitka, St_Barthelemy, St_Johns, St_Kitts, St_Lucia, St_Thomas, St_Vincent, Swift_Current, Tegucigalpa, Thule, Thunder_Bay, Tijuana, Toronto, Tortola, Vancouver, Virgin, Whitehorse, Winnipeg, Yakutat, Yellowknife
+tzdata	tzdata/Zones/America	select	
+# Services to restart for PAM library upgrade:
+libpam0g:amd64	libpam0g/restart-services	string	
+# Failure restarting some services for OpenSSL upgrade
+libssl1.0.2:amd64	libssl1.0.2/restart-failed	error	
+# Interface to use:
+# Choices: Dialog, Readline, Gnome, Kde, Editor, Noninteractive
+debconf	debconf/frontend	select	Dialog
+# Failure restarting some services for PAM upgrade
+libpam0g:amd64	libpam0g/restart-failed	error	
+# Time zone:
+# Choices: AST4, AST4ADT, CST6, CST6CDT, EST5, EST5EDT, HST10, MST7, MST7MDT, PST8, PST8PDT, YST9, YST9YDT
+tzdata	tzdata/Zones/SystemV	select	
+# Do you want to change the GID of user ?
+base-passwd	base-passwd/user-change-gid	boolean	true
+# Do you want system-wide readable home directories?
+adduser	adduser/homedir-permission	boolean	true
+# Visible domain name for local users:
+exim4-config	exim4/dc_readhost	string	
+# Time zone:
+# Choices: Azores, Bermuda, Canary, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, South_Georgia, St_Helena, Stanley
+tzdata	tzdata/Zones/Atlantic	select	
+# Display manager must be restarted manually
+libpam0g:amd64	libpam0g/xdm-needs-restart	error	
+# Reconfigure exim4-config instead of this package
+exim4	exim4/drec	error	
+# System mail name:
+exim4-config	exim4/mailname	string	46b08a4580e1
+# Keep number of DNS-queries minimal (Dial-on-Demand)?
+exim4-config	exim4/dc_minimaldns	boolean	false
+# Do you want to change the shell of user ?
+base-passwd	base-passwd/user-change-shell	boolean	true
+# Deprecated configuration file
+snort-common	snort/deprecated_file	note	
+# Recipient of daily statistics mails:
+snort	snort/stats_rcpt	string	root
+# Ignore questions with a priority less than:
+# Choices: critical, high, medium, low
+debconf	debconf/priority	select	high
+# Invalid interface
+snort	snort/invalid_interface	error	
+# Time zone:
+# Choices: Casey, Davis, DumontDUrville, Macquarie, Mawson, McMurdo, Palmer, Rothera, Syowa, Troll, Vostok
+tzdata	tzdata/Zones/Antarctica	select	
+# Remove undelivered messages in spool directory?
+exim4-base	exim4/purge_spool	boolean	false
+# Time zone:
+# Choices: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+tzdata	tzdata/Zones/Indian	select	
+# No PAM profiles have been selected.
+libpam-runtime	libpam-runtime/no_profiles_chosen	error	
+# Geographic area:
+# Choices: Africa, America, Antarctica, Australia, Arctic, Asia, Atlantic, Europe, Indian, Pacific, SystemV, US, Etc
+tzdata	tzdata/Areas	select	Etc
+# Hide local mail name in outgoing mail?
+exim4-config	exim4/hide_mailname	boolean	
+# Other destinations for which mail is accepted:
+exim4-config	exim4/dc_other_hostnames	string	46b08a4580e1
+# Machines to relay mail for:
+exim4-config	exim4/dc_relay_nets	string	
+# Time zone:
+# Choices: Aden, Almaty, Amman, Anadyr, Aqtau, Aqtobe, Ashgabat, Atyrau, Baghdad, Bahrain, Baku, Bangkok, Barnaul, Beirut, Bishkek, Brunei, Chita, Choibalsan, Chongqing, Colombo, Damascus, Dhaka, Dili, Dubai, Dushanbe, Famagusta, Gaza, Harbin, Hebron, Ho_Chi_Minh, Hong_Kong, Hovd, Irkutsk, Istanbul, Jakarta, Jayapura, Jerusalem, Kabul, Kamchatka, Karachi, Kashgar, Kathmandu, Khandyga, Kolkata, Krasnoyarsk, Kuala_Lumpur, Kuching, Kuwait, Macau, Magadan, Makassar, Manila, Muscat, Nicosia, Novokuznetsk, Novosibirsk, Omsk, Oral, Phnom_Penh, Pontianak, Pyongyang, Qatar, Qostanay, Qyzylorda, Rangoon, Riyadh, Sakhalin, Samarkand, Seoul, Shanghai, Singapore, Srednekolymsk, Taipei, Tashkent, Tbilisi, Tehran, Tel_Aviv, Thimphu, Tokyo, Tomsk, Ujung_Pandang, Ulaanbaatar, Urumqi, Ust-Nera, Vientiane, Vladivostok, Yakutsk, Yangon, Yekaterinburg, Yerevan
+tzdata	tzdata/Zones/Asia	select	
+# Should daily summaries be sent by e-mail?
+snort	snort/send_stats	boolean	true
+# Do you want to change the UID of user ?
+base-passwd	base-passwd/user-change-uid	boolean	true
+# Do you want to remove the group ?
+base-passwd	base-passwd/group-remove	boolean	true
+# IP address or host name of the outgoing smarthost:
+exim4-config	exim4/dc_smarthost	string	
+# Address range for the local network:
+snort	snort/address_range	string	172.17.0.1/24
+# Time zone:
+# Choices: Longyearbyen
+tzdata	tzdata/Zones/Arctic	select	
+# Additional custom options:
+snort	snort/options	string	
+# Obsolete configuration file
+snort	snort/config_parameters	error	
+# Failure restarting some services for OpenSSL upgrade
+libssl1.1:amd64	libssl1.1/restart-failed	error	
+# Time zone:
+# Choices: GMT, GMT+0, GMT+1, GMT+10, GMT+11, GMT+12, GMT+2, GMT+3, GMT+4, GMT+5, GMT+6, GMT+7, GMT+8, GMT+9, GMT-0, GMT-1, GMT-10, GMT-11, GMT-12, GMT-13, GMT-14, GMT-2, GMT-3, GMT-4, GMT-5, GMT-6, GMT-7, GMT-8, GMT-9, GMT0, Greenwich, UCT, UTC, Universal, Zulu
+tzdata	tzdata/Zones/Etc	select	UTC

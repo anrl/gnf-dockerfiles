@@ -2,12 +2,10 @@ import time
 import sys
 import os
 import httplib
-import time 
 
 def postNotification(notification):
 	conn = httplib.HTTPConnection("127.0.0.1:8081")
 	conn.request("POST", "/notification", notification)
-	time.sleep(1)
 	conn.close()
 
 def tail(file):
@@ -28,8 +26,6 @@ with open(sys.argv[1]) as f:
 		if line != os.linesep:
 			chunk.append(line)
 		else:
-			print "Alert received: " + str(chunk)
-			print "-----------------------------"
 			alert = ''.join(chunk)
 			postNotification(alert)
 			chunk = []

@@ -78,6 +78,12 @@ case "$COMMAND" in
                 MIDDLEBOXID=$(docker run -itd --cap-add=NET_ADMIN $i)
                 echo "started middlebox $MIDDLEBOXID"
 
+                if [[ $i == *"snort"* ]]; then
+                    echo "Updating python file for logrunner.py!"
+                    #IPADDRESS=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$MIDDLEBOXID")
+                    docker exec $MIDDLEBOXID /bin/bash -c "sed -i.bak 's/127.0.0.1/172.17.0.1/g' /data/logrunner.py && rm /data/logrunner.py.bak"
+                fi
+                
                 # Attach the two interfaces
                 pipework ${BRIDGE_NAME} -i if1 $MIDDLEBOXID 0/0
                 pipework ${BRIDGE_NAME} -i if2 $MIDDLEBOXID 0/0
