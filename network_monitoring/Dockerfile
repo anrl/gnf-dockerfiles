@@ -14,10 +14,11 @@ RUN pip install requests
 RUN mkdir data
 ADD main.py ./data/
 RUN chmod +x ./data/main.py
+COPY ./startup_script.sh /
+RUN chmod 777 /startup_script.sh
 
 # Set delta for notification of stats here (float, seconds)
-ENV DELTA 60.0
+ENV DELTA 5.0
 
-ENTRYPOINT ifinit && \
-        brinit && \
-        python ./data/main.py
+ENTRYPOINT trap : TERM INT; sleep infinity & wait
+

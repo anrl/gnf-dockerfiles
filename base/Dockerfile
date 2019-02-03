@@ -11,7 +11,12 @@ RUN apt-get update && apt-get install -y \
 	procps \
 	tcpdump \
 	curl \
-	vim
+	vim \
+	iperf
+
+RUN mkdir data
+ADD random.sh ./data/
+RUN chmod +x ./data/random.sh
 
 ADD ifinit /usr/local/bin/
 ADD brinit /usr/local/bin/

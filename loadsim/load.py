@@ -26,6 +26,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, inthandler)
     signal.signal(signal.SIGTERM, inthandler)
 
+    "Starting load simulator..."
     q = None
     q = nfqueue.queue()
     q.open()

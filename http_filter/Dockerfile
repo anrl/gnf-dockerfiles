@@ -17,7 +17,7 @@ RUN pip install requests
 RUN mkdir data
 ADD main.py ./data/
 RUN chmod +x ./data/main.py
+COPY ./startup_script.sh /
+RUN chmod 777 /startup_script.sh
 
-ENTRYPOINT iptables -A FORWARD -j NFQUEUE -p tcp --destination-port 80 --queue-num 1 && \
-	python ./data/main.py >> http_filter.logs && \
-    ifinit
+ENTRYPOINT trap : TERM INT; sleep infinity & wait

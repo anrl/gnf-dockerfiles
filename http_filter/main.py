@@ -2,6 +2,7 @@ from netfilterqueue import NetfilterQueue
 from scapy.all import *
 import requests
 
+# set up a notifications API to receive messages
 url = 'http://172.17.42.1:8081/notification'
 
 def callback(pkt):
