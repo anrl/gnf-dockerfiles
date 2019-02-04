@@ -9,6 +9,8 @@ Installation
 
 This setup requires *sudo* permissions and also makes network level changes. Thus it is best to experiment with it in a Linux VM or use the **testing** docker image within which *docker* is installed.
 
+---
+
 ### Pre-req
 1. If running *glanf*  in host or VM then you need the `pipework` tool
     - You can get it [here](https://github.com/jpetazzo/pipework)
@@ -20,6 +22,8 @@ This setup requires *sudo* permissions and also makes network level changes. Thu
 3. Must have python package `flask-restful` installed to run the test *webapp*
     - You can install it using **pip** : `pip install flask-restful` 
 
+---
+
 ### Build 
 
 - Build all VNF docker-images using the [*buildAll.sh*](https://github.com/anrl/gnf-dockerfiles/blob/master/buildAll.sh) script.
@@ -30,6 +34,8 @@ This setup requires *sudo* permissions and also makes network level changes. Thu
     - each of these commands simply run this [**glanf**](https://github.com/anrl/gnf-dockerfiles/blob/master/testing/glanf) script.
 
 
+---
+
 #### Running the [glanf](https://github.com/anrl/gnf-dockerfiles/blob/master/testing/glanf) script
 
     - glanf_start <BASE_IMAGE> <INTERMEDIARY_VNF_1_IMAGE> <INTERMEDIARY_VNF_2_IMAGE> ....
@@ -38,13 +44,21 @@ This setup requires *sudo* permissions and also makes network level changes. Thu
 
 Always use `glanf_reset` between subsequent calls to `glanf_start` to get a clean state.
 
+---
+
 #### glanf_start
 
 Ex: `glanf_start glanf/base glanf/wire`
 
 The above example has used the `glanf/base` as the base-image and has one *middlebox container* from the image `glanf/wire`
 
-    
+![setup overview][glanf]
+
+
+
+---
+
+
 
 
 
@@ -68,3 +82,6 @@ An example invocation is as follows:
 ```
 docker run -itd --cap-add=NET_ADMIN --env="LOAD_FACTOR=8.0" --env="DELAY=2ms" glanf/loadsim
 ```
+
+
+[glanf]: https://github.com/anrl/gnf-dockerfiles/blob/master/images/glanf.jpg "General setup of the VNF network"
