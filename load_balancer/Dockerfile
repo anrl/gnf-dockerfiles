@@ -16,7 +16,6 @@ RUN apt-get install -y \
 
 RUN pip install netfilterqueue
 
-RUN mkdir data
 ADD loadbalancer.py ./data/
 RUN chmod +x ./data/loadbalancer.py
 COPY ./startup_script.sh /

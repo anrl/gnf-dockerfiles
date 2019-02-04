@@ -14,7 +14,6 @@ RUN apt-get install -y \
 RUN pip install netfilterqueue
 RUN pip install requests
 
-RUN mkdir data
 ADD main.py ./data/
 RUN chmod +x ./data/main.py
 COPY ./startup_script.sh /

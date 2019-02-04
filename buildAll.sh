@@ -2,12 +2,21 @@
 
 echo "Building docker images....."
 CURR_FOLDER=`pwd`
+
+cd base
+docker build . -t "glanf/base"
+cd $CURR_FOLDER
+
 for folder in $(ls -d *)
 do
     FOLDER="$CURR_FOLDER/$folder"
     if [[ -d $FOLDER ]]; then
-        cd $FOLDER
-        docker build . -t "glanf/$folder"
+        if [[ $FOLDER == *"base"* ]]; then
+            echo "Already built base image..."
+        else
+            cd $FOLDER
+            docker build . -t "glanf/$folder"
+        fi
     fi
     cd $CURR_FOLDER
 done

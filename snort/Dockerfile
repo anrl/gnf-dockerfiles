@@ -13,7 +13,6 @@ RUN debconf-set-selections < /snort_deb_conf \
                 && apt-get update \
                 && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends snort 
 
-RUN mkdir /data
 ADD logrunner.py /data/
 ADD supervisord.conf /etc/supervisor/
 ADD snort.conf /etc/snort/
