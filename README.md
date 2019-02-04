@@ -50,17 +50,25 @@ Always use `glanf_reset` between subsequent calls to `glanf_start` to get a clea
 
 Ex: `glanf_start glanf/base glanf/wire`
 
-The above example has used the `glanf/base` as the base-image and has one *middlebox container* from the image `glanf/wire`
+- The above example has used the `glanf/base` as the base-image and has one *middlebox container* from the image `glanf/wire`
 
 ![setup overview][glanf]
+
+- The setup is always as above. The **source** and **destination** containers are from the `glanf/base` image whilst the middle box is from the `glanf/wire` image.
+
+- In the meantime the containers are connected to the `ovs-bridge` and *flow rules* are setup to forward traffic between the `source` and `destination` containers via the intermediary *MIDDLEBOX* containers.
+
+- There could be more than one *middlebox images* passed to `glanf_start`, in which case all would be chained between the `source` and `destination`.
+
+---
+
+#### VNF - firewall
+
+
 
 
 
 ---
-
-
-
-
 
 #### loadsim - VNF
 
